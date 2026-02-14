@@ -1,0 +1,9 @@
+{
+    "Settings": true,
+    "Users": true,
+    "Roles": true,
+    "Cities": true,
+    "Donors": true,
+    "Compensation": true,
+    "Requests": true
+}

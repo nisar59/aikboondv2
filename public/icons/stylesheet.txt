@@ -1,0 +1,12 @@
+primary color code:ED1B24
+content color code: 7E7E7E
+heading color code: 272A2F
+form placeholders: C4C4C4
+
+
+fonts
+headings: poppins medium 22
+paragraph: Poppins medium 14
+placeholders/small text: poppins medium 12
+
+

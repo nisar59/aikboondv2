@@ -1,0 +1,22 @@
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3VzdG9tLmNzcyIsInNvdXJjZXMiOlsiY3VzdG9tLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiJ9 */
+
+/*# sourceMappingURL=custom.css.map */
+
+td{
+	word-break: break-all;
+}
+
+.sidebar-brand-mini{
+	display: none !important;
+}
+.sidebar-mini .sidebar-brand{
+	display: none !important;
+}
+.sidebar-mini .sidebar-brand-mini{
+	display: block !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 40px;
+}

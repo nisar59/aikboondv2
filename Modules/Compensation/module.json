@@ -1,0 +1,11 @@
+{
+    "name": "Compensation",
+    "alias": "compensation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Compensation\\App\\Providers\\CompensationServiceProvider"
+    ],
+    "files": []
+}
