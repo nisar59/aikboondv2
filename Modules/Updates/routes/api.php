@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
     |
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->name('api.')->group(function () {
-    Route::get('updates', fn (Request $request) => $request->user())->name('updates');
+//Route::middleware(['auth:sanctum'])->prefix('v1')->name('api.')->group(function () {
+//    Route::get('updates', fn (Request $request) => $request->user())->name('updates');
+//});
+Route::group(['prefix'=>'updates','middleware' => ['api']],function(){
+    Route::get('/', 'UpdatesController@getUpdate');
 });

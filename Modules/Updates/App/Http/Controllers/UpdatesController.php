@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Modules\Updates\App\Models\Updates;
 use Yajra\DataTables\Facades\DataTables;
+use Throwable;
 use Auth;
 class UpdatesController extends Controller
 {
@@ -153,4 +154,31 @@ class UpdatesController extends Controller
         return redirect('updates')->with('success','Update status successfully updated');
 
     }
+
+
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+
+    public function getUpdate(Request $req){
+        $res=['success'=>false,'message'=>null,'errors'=>[],'data'=>null];
+        try {
+            $data['update'] =Updates::inRandomOrder()->where("status", 1)->first();
+            $res=['success'=>true,'message'=>'Update fetched successfully','errors'=>[],'data'=>$data];
+            return response()->json($res);
+        }
+        catch(Exception $ex){
+            $res=['success'=>false, 'message'=>'Something went wrong with this error: '.$ex->getMessage(),'errors'=>[], 'data'=>null];
+            return response()->json($res);
+        }catch(Throwable $ex){
+            $res=['success'=>false, 'message'=>'Something went wrong with this error: '.$ex->getMessage(),'errors'=>[], 'data'=>null];
+            return response()->json($res);
+        }
+
+    }
+
 }
