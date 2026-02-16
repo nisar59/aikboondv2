@@ -167,7 +167,11 @@ class UpdatesController extends Controller
     public function getUpdate(Request $req){
         $res=['success'=>false,'message'=>null,'errors'=>[],'data'=>null];
         try {
-            $data['update'] =Updates::inRandomOrder()->where("status", 1)->first();
+           $update =Updates::inRandomOrder()->where("status", 1)->first();
+           if($update){
+               $update->image=url('img/updates', $update->image);
+           }
+            $data['update']=$update;
             $res=['success'=>true,'message'=>'Update fetched successfully','errors'=>[],'data'=>$data];
             return response()->json($res);
         }
