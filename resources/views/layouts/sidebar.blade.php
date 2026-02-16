@@ -53,6 +53,12 @@ $pref=Request()->route()->getPrefix();
         <a href="{{url('/compensation')}}" class="nav-link"><i class="fas fa-wallet"></i><span>Compensation</span></a>
       </li>
       @endcan
+        @can('updates.view')
+            <li class="menu-header">Panel Settings</li>
+            <li class="dropdown @if($pref=='/updates') active @endif">
+                <a href="{{url('/updates')}}" class="nav-link"><i class="fas fa-upload"></i><span>Updates</span></a>
+            </li>
+        @endcan
       @can('settings.view')
       <li class="menu-header">Panel Settings</li>
       <li class="dropdown @if($pref=='/settings') active @endif">
