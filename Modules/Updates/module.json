@@ -1,0 +1,11 @@
+{
+    "name": "Updates",
+    "alias": "updates",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Updates\\App\\Providers\\UpdatesServiceProvider"
+    ],
+    "files": []
+}
