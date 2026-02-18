@@ -15,7 +15,7 @@ Blood Donors
             <div class="collapse multi-collapse" id="multiCollapseExample2" data-bs-parent="#filters-container">
               <div class="p-3 accordion-body">
                 <div class="row">
-                  
+
                   <div class="col-md-4 form-group">
                     <label for="">Name</label>
                     <input type="text" class="form-control filters" name="name" placeholder="Name">
@@ -38,7 +38,7 @@ Blood Donors
                       @endforeach
                     </select>
                   </div>
-                  
+
                   <div class="col-md-4 form-group">
                     <label for="">Address</label>
                     <input type="text" class="form-control filters" name="address" placeholder="Address">
@@ -73,11 +73,10 @@ Blood Donors
                     <th>Name</th>
                     <th>Age</th>
                     <th>Phone No</th>
-                    <th>Blood Group</th>                    
+                    <th>Blood Group</th>
                     <th>Last Donated Date</th>
                     <th>State Name</th>
                     <th>City Name</th>
-                    <th>Union Council Name</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -107,15 +106,14 @@ $(document).ready( function(){
         },
       buttons:[],
       buttons:[],
-              columns: [                
+              columns: [
                 {data: 'name', name: 'name'},
                 {data: 'dob', name: 'dob'},
-                {data: 'phone', name: 'phone'},                
+                {data: 'phone', name: 'phone'},
                 {data: 'blood_group', name: 'blood_group'},
                 {data: 'last_donate_date', name: 'last_donate_date'},
                 {data: 'state_id', name: 'state_id'},
                 {data: 'city_id', name: 'city_id'},
-                {data: 'ucouncil_id', name: 'ucouncil_id'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
   });

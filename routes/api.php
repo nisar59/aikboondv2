@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::group(['prefix'=>'/', 'middleware'=>['api']],function(){
-    Route::post('send-code', 'API\AuthController@verificationCode');
+    Route::post('send-code', 'API\CommonController@verificationCode');
+    Route::get('states','API\CommonController@fetchStates');
+    Route::get('cities/{state_id}','API\CommonController@fetchCity');
 });
 
 Route::group(['prefix'=>'auth', 'middleware'=>['api']],function(){

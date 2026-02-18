@@ -35,23 +35,6 @@ class DonorsController extends Controller
 
             $donors=Donor::query();
 
-            if($user->hasRole('super-admin') || $user->can('donors.view-all')){
-
-           }
-           elseif(!$user->hasRole('super-admin') && $user->can('donors.view-by-state')){
-                $donors->where('state_id', $user->state_id);
-           }
-           elseif(!$user->hasRole('super-admin') && $user->can('donors.view-by-city')){
-                $donors->where('city_id', $user->city_id);
-           }
-            elseif(!$user->hasRole('super-admin') && $user->can('donors.view-by-area')){
-                $donors->where('area_id', $user->area_id);
-           }
-           else{
-                $donors->where('town_id', $user->town_id);
-           }
-
-
              if ($req->name != null) {
             $donors->where('name','LIKE','%'.$req->name.'%');
             }
@@ -60,9 +43,6 @@ class DonorsController extends Controller
             }
              if ($req->city_id != null) {
             $donors->where('city_id', $req->city_id);
-            }
-            if ($req->area_id != null) {
-            $donors->where('area_id', $req->area_id);
             }
             if ($req->address != null) {
             $donors->where('address','LIKE','%'.$req->address.'%');
@@ -108,10 +88,6 @@ class DonorsController extends Controller
                 if($row->city()->exists()){
                     return $row->city->name;
                 }
-            })
-            ->editColumn('ucouncil_id',function ($row)
-            {
-               return UnionCouncil($row->ucouncil_id);
             })
 
            ->editColumn('last_donate_date',function($row)
